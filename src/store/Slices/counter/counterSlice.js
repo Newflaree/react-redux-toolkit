@@ -14,9 +14,16 @@ export const counterSlice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       state.counter ++;
-    }
+    },
+    decrement: (state) => {
+      state.counter --;
+    },
+    incremetyBy: ( state, action ) => {
+      console.log( action );
+      state.counter += action.payload
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment } = counterSlice.actions
+export const { increment, incremetyBy, decrement } = counterSlice.actions
